@@ -1,0 +1,14 @@
+{
+  "domain": "epin",
+  "name": "ePIN Pollenflug",
+  "codeowners": [
+    "@Flo-Schilli"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/Flo-Schilli/ha-epin-pollenflug",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": []
+}

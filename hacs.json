@@ -1,0 +1,5 @@
+{
+  "name": "ePIN Pollenflug",
+  "render_readme": true,
+  "domains": ["sensor"]
+}
