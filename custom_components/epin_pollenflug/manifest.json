@@ -8,7 +8,9 @@
   "documentation": "https://github.com/Flo-Schilli/ha-epin-pollenflug",
   "homekit": {},
   "iot_class": "cloud_polling",
-  "requirements": [],
+  "requirements": [
+    "dataclasses-json==0.6.7"
+  ],
   "ssdp": [],
   "zeroconf": []
 }
