@@ -1,4 +1,6 @@
 import logging
+import time
+from datetime import datetime, timedelta
 from typing import List
 
 from aiohttp import ClientSession
@@ -76,7 +78,7 @@ class Epin:
             Exception: If there is an error retrieving the seasons.
         """
         try:
-            async with self._session.get(self.__api_url + '/season') as response:
+            async with self._session.get(self.__api_url + '/seasons') as response:
                 data = await response.json()
                 return [SeasonDto.from_dict(season) for season in data]
         except Exception as e:
@@ -103,7 +105,9 @@ class Epin:
             pollen_data = await get_pollen_data(locations, pollen)
         """
         try:
-            url = f'{self.__api_url}/measurements?locations={",".join(locations)}&pollen={",".join(pollen)}'
+            now = time.time()
+            earlier = now - timedelta(hours=3).seconds
+            url = f'{self.__api_url}/measurements?locations={",".join(locations)}&pollen={",".join(pollen)}&from={earlier}&to={now}'
 
             async with self._session.get(url) as response:
                 data = await response.json()
