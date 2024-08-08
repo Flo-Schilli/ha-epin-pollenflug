@@ -16,9 +16,10 @@ class AlgorithmsDto:
 class LocationDto:
     id: str
     name: str
+    network: str
     longitude: float = field(metadata=config(field_name='lon'))
     latitude: float = field(metadata=config(field_name='lat'))
-    algorithm: Optional[List[AlgorithmsDto]] = field(default_factory=list)
+    algorithms: Optional[List[AlgorithmsDto]] = field(default_factory=list)
 
 
 @dataclass_json

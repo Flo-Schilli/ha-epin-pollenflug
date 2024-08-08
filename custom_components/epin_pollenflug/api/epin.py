@@ -1,6 +1,6 @@
 import logging
 import time
-from datetime import datetime, timedelta
+from datetime import timedelta
 from typing import List
 
 from aiohttp import ClientSession
